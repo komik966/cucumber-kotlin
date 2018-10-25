@@ -39,7 +39,7 @@ class KotlinCucumberExtension : AbstractCucumberExtension() {
         val result = mutableListOf<AbstractStepDefinition>()
         val dependenciesScope = module.moduleContentWithDependenciesScope
         val kotlinFiles = GlobalSearchScope.getScopeRestrictedByFileTypes(dependenciesScope, KotlinFileType.INSTANCE)
-        for (method in arrayOf("Given", "And", "Then", "But", "When")) {
+        for (method in arrayOf("Given", "And", "Then", "But", "When", "Ale", "Gdy", "I", "Jeśli", "Jeżeli", "Kiedy", "Mając", "Oraz", "Wtedy", "Zakładając", "Zakładającże")) {
             val occurrencesProcessor: (PsiElement, Int) -> Boolean = { element, _ ->
                 val parent = element.parent
                 if (parent != null) {
